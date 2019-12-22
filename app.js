@@ -5,8 +5,11 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import indexRouter from './routes/index';
+import socket from 'socket.io';
+
 require('dotenv').config();
 var app = express();
+app.io = socket();
 
 // view engine setup
 app.set('views', join(__dirname, 'views'));
